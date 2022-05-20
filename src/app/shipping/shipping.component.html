@@ -1,0 +1,8 @@
+<div class="shipping-item">
+    <mat-label>Shipping Type:</mat-label>
+    <mat-select [(ngModel)]="shippingValue">
+        <mat-option *ngFor="let shipping of shippingCosts | async"  [value]="shipping.type" (click)="onShippingCost(shipping.price)">
+            <span class="shipping-type">{{ shipping.type }}</span>
+        </mat-option>
+    </mat-select>
+</div> 

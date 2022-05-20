@@ -1,0 +1,19 @@
+<div class="total-item">
+  <div class="totals">
+    Sub Total:
+    <span>{{ item | currency }}</span>
+  </div>
+  <div class="totals">
+    Shipping:
+    <span>{{ shippingCost | currency }}</span>
+  </div>
+  <div class="totals">
+    Sales Tax:
+    <span *ngIf="taxes > 0">{{ taxes }}%</span>
+    <span *ngIf="!taxes">0%</span>
+  </div>
+  <div class="totals">
+    Total:
+    <span>{{ (((taxes / 100) * item) + item) + shippingCost | currency }}</span>
+  </div>
+</div>

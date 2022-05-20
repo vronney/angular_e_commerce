@@ -1,0 +1,49 @@
+<h3>Cart</h3>
+
+<!-- <p>
+    <a routerLink="/shipping">Shipping Prices</a>
+</p> -->
+
+<div class="cart-item" *ngFor="let item of items">
+    <span class="inc-dec-btns">
+        <button mat-raised-button color="accent" class="increase" (click)="onIncrease(item)">+</button>
+        <span class="item-count">{{ item.quantity }}</span>
+        <button mat-raised-button color="accent" [ngClass]="{'disable-click' : item.quantity === 1}" class="decrease" (click)="onDecrease(item)">-</button>
+    </span>
+    <span class="item-name">{{ item.name }}</span>
+    <span *ngIf="item.total === 0" class="item-price unitPrice">{{ item.unitPrice | currency }}</span>
+    <span *ngIf="item.total !== 0" class="item-price totalPrice">{{ item.total | currency }}</span>
+    <button mat-raised-button color="warn" (click)="onRemove(item)">
+        <mat-icon>delete</mat-icon>
+    </button>
+</div>
+
+<form [formGroup]="checkoutForm" (ngSubmit)="onSubmit()">
+    <div *ngIf="items.length > 0">
+        <app-shipping (shippingCost)="getShippingCost($event)"></app-shipping>
+    </div>
+
+    <div *ngIf="items.length > 0">
+        <app-sales-taxes (stateSalesTax)="getSalesTaxes($event)"></app-sales-taxes>
+    </div>
+
+    <div *ngIf="totalPrice > 0">
+        <app-total-cost [item]="totalPrice" [shippingCost]="shippingCost" [taxes]="taxes"></app-total-cost>
+    </div>
+    
+    <div>
+        <label for="name">
+            Name
+        </label>
+        <input id="name" type="text" formControlName="name">
+    </div>
+
+    <div>
+        <label for="address">
+            Address
+        </label>
+        <input id="address" type="text" formControlName="address">
+    </div>
+
+    <button class="button" type="submit">Purchase</button>
+</form>

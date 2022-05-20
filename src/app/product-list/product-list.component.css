@@ -1,0 +1,27 @@
+.container {
+    flex-wrap: wrap;
+    overflow: hidden;
+}
+
+.product-card {
+    min-width: 325px;
+    max-width: 325px;
+    min-height: 200px;
+    border: 1px solid;
+    margin: .75em;
+}
+
+mat-card-actions {
+    position: absolute;
+    bottom: 0;
+}
+
+::ng-deep .mat-card>.mat-card-actions:last-child {
+    margin-bottom: .5em !important;
+}
+
+/*
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+*/

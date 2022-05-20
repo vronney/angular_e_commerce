@@ -1,0 +1,37 @@
+.item-name,
+.item-price {
+    display: flex;
+    align-items: center;
+}
+
+.inc-dec-btns {
+    display: flex;
+    align-items: center;
+}
+
+.decrease {
+    padding-left: 3.5px;
+    padding-right: 3.5px;
+}
+
+.increase, 
+.decrease {
+    padding: .25em;
+    font-size: 14px;
+}
+
+.item-count {
+    padding: 0 .25em;
+    line-height: 1.70em;    
+    background-color: #fff;
+}
+
+.mat-raised-button {
+    min-width: 1.15em;
+    line-height: 18px;
+}
+
+.disable-click {
+    pointer-events: none;
+    cursor: default;
+}

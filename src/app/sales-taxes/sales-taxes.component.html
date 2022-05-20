@@ -1,0 +1,8 @@
+<div class="shipping-item">
+  <mat-label>Sales Tax:</mat-label>
+  <mat-select [(ngModel)]="salesTaxValue">
+    <mat-option *ngFor="let tax of salesTaxes | async" [value]="tax.tax" (click)="onSalesTaxes(tax.tax)">
+      <span class="shipping-type">{{ tax.state }}</span>
+    </mat-option>
+  </mat-select>
+</div>
