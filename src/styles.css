@@ -167,7 +167,7 @@ app-top-bar h1 {
 @media only screen and (max-width: 400px) {
   .cart-item,
   .shipping-item, .total-item {
-    min-width: 26em;
+    min-width: 23em;
   }
 }
 
