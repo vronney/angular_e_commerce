@@ -31,7 +31,8 @@ import { SalesTaxesComponent } from './sales-taxes/sales-taxes.component';
       { path: '', component: ProductListComponent },
       { path: 'products/:productId', component: ProductDetailsComponent },
       { path: 'cart',  component: CartComponent},
-      { path: 'shipping', component: ShippingComponent }
+      { path: 'shipping', component: ShippingComponent },
+      { path: '**', component: ProductListComponent }
     ]),
     BrowserAnimationsModule,
     HttpClientModule,
